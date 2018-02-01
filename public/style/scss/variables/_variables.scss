@@ -1,0 +1,19 @@
+$primary-color: rgb(0,164,222);
+$primary-color-hover: rgb(30,79,249);
+$color-base-black: rgb(0,0,0) ;
+$color-light:lighten($color-base-black, 54%);
+$color-dark:lighten($color-base-black, 15%);
+$color-white: rgb(255,255,255);
+
+//Font Family
+
+$font-famiy: 'Work Sans', sans-serif;
+
+
+/*** Custom Sidebar Setting ***/
+
+$bgSideDefault      : #10A4FB;
+$bgHighlight        : darken($bgSideDefault, 10%);
+$bgSeparator        : lighten($bgSideDefault, 10%);
+$colSideDefault     : #ffffff;
+$colHighlight       : #ffffff;

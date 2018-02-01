@@ -1,0 +1,133 @@
+/*** Anchor Links ***/
+
+@mixin link ($link, $hover: $link, $visit: $link, $active: $link, $hover-dec: none) {
+  color: $link;
+  text-decoration: $hover-dec;
+  &:focus,
+  &:hover {
+    color: $hover;
+    text-decoration: $hover-dec;
+  }
+  &:visited {
+    color: $visit;
+  }
+  &:active {
+    color: $active;
+  }
+}
+/*** Font Size ***/
+@function calc-rem($size) {
+  $rem: $size / 10px;
+  @return #{$rem}rem;
+}
+@mixin font-rem($size) {
+  font-size: $size;
+  font-size: calc-rem($size);
+}
+
+/*** Custom Sidebar Setting ***/
+
+$bgSideDefault      : rgb(47,51,55);
+$bgSideHighlight    : darken($bgSideDefault, 10%);
+$bgSideSeparator    : lighten($bgSideDefault, 10%);
+$colSideDefault     : #ccc;
+$colSideHighlight   : #6cc86c;
+$panel-col-bg       : #484F57;
+
+/*** Custom Navbar Setting ***/
+$bgDefault      : rgb(47,51,55);/*#181a1c;*/
+$bgHighlight    : darken($bgDefault, 10%);
+$colDefault     : #ccc;
+$colHighlight   : #ffffff;
+$linkHover      : transparent;
+$dropDown       : false;
+.navbar-default {
+  background-color: $bgDefault;
+  border-color: $bgHighlight;
+  .navbar-brand {
+    color: $colDefault;
+    &:hover, &:focus {
+      color: $colHighlight; }}
+  .navbar-text {
+    color: $colDefault; }
+  .navbar-nav {
+    > li {
+      > a {
+        color: $colDefault;
+        &:hover,  &:focus {
+          color: $colHighlight;
+        background-color: $linkHover; }}
+      @if $dropDown {
+        > .dropdown-menu {
+          background-color: $bgDefault;
+          > li {
+            > a {
+              color: $colDefault;
+              &:hover,  &:focus {
+                color: $colHighlight;
+                background-color: $bgHighlight; }}
+            > .divider {
+              background-color: $bgHighlight;}}}}}
+    @if $dropDown {
+      .open .dropdown-menu > .active {
+        > a, > a:hover, > a:focus {
+          color: $colHighlight;
+          background-color: $bgHighlight; }}}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}
+    > .open {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+  .navbar-toggle {
+    border-color: $bgHighlight;
+    &:hover, &:focus {
+      background-color: $bgHighlight; }
+    .icon-bar {
+      background-color: $colDefault; }}
+  .navbar-collapse,
+  .navbar-form {
+    border-color: $colDefault; }
+  .navbar-link {
+    color: $colDefault;
+    &:hover {
+      color: $colHighlight; }}}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu {
+    > li > a {
+      color: $colDefault;
+      &:hover, &:focus {
+        color: $colHighlight; }}
+    > .active {
+      > a, > a:hover, > a:focus {
+        color: $colHighlight;
+        background-color: $bgHighlight; }}}
+}
+
+/*** Truncate ***/
+
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/*** Flexible Viewport: Breakpoint Variables to use with @mixin ***/
+
+$mobile: 640px;
+$tablet: 768px;
+$desktopSmall: 980px;
+$desktopLarge: 1200px;
+
+@mixin respond-to($val, $val2: none) {
+  @if ($val2 == none) {
+    @media (min-width: $val) { @content; }
+  } @else if ($val2 == max) {
+    @media (max-width: $val) { @content; }
+  } @else {
+    @media (min-width: $val) and (max-width: $val2) { @content; }
+  }
+}

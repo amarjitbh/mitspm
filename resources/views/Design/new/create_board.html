@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Project Management</title>
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+
+</head>
+<body>
+<div id="app" class="top-navbar layout-login-dashboard">
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand visible-xs" href="http://localhost/project_management/public">
+                    Project Management </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav hidden-xs">
+                    <li>
+                        <a href="dashboard">
+                            Project Management </a>
+                    </li>
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Amarjit <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li>
+                                <a href="logout"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="logout" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC">
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="dashboard-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="dashboard-main">
+                        <span class="title font16">
+                            DASHBOARD - Admin
+                        </span>
+                        <span class="pull-right">
+                            <a href="projects/create" class="btn btn-success btn-create-project btn-xs">Create New
+                                Project</a>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container alert-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="padding0">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="panel panel-default">
+
+
+        <div class="panel-body">
+
+            <div class="row mb25">
+
+
+
+                <form action="add-board" method="POST" id="board-form">
+                    <input type="hidden" name="_token" value="f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC">
+                    <input class="form-control" id="project_id" placeholder="Project ID" ="" name="project_id" type="hidden" value="1">
+                    <div class="col-sm-6">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label font-500">Board name</label>
+                            <input class="form-control" id="project_board_name" placeholder="Board Name" required="1" name="project_board_name" type="text">
+                        </div>
+                        <div class="form-group form-group-sm">
+                            <label class="control-label font-500">Description</label>
+                            <textarea class="form-control no-resize" id="description" placeholder="Description" rows="2" name="description" cols="50"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label font-500 w-100p">Columns <span class="pull-right pr20"><a  href="javascript:void(0);"><i class="fa fa-plus font10"></i> Add more</a></span></label>
+
+                            <div class="input-group mb5">
+
+                                <input class="form-control col text-capitalize" id="icebox" value="icebox" name="columns[]" type="text">
+                                        <span class="input-group-btn add-board-remove-btn">
+                                            <button type="button" id="iceboxBtn" class="btn btn-no-border btn-xs"  >
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+
+                            </div>
+
+                            <div class="input-group mb5">
+                                <input class="form-control col text-capitalize" id="todo" value="todo" name="columns[]" type="text">
+                                    <span class="input-group-btn add-board-remove-btn">
+                                        <button type="button" id="todoBtn" class="btn btn-no-border btn-xs"  >
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </span>
+
+                            </div>
+
+                            <div class="input-group mb5">
+                                <input class="form-control col text-capitalize" id="backlogs" value="backlogs" name="columns[]" type="text">
+                                        <span class="input-group-btn add-board-remove-btn">
+                                            <button type="button" id="backlogsBtn" class="btn btn-no-border btn-xs"  >
+                                                <i class="fa fa-times" aria-hidden="true"></i>
+                                            </button>
+                                        </span>
+
+                            </div>
+                            <div class="input-group mb5">
+                                <input class="form-control col text-capitalize" id="inprogress" value="inprogress" name="columns[]" type="text">
+                                    <span class="input-group-btn add-board-remove-btn">
+                                        <button type="button" id="inprogressBtn" class="btn btn-no-border btn-xs"  >
+                                            <i class="fa fa-times" aria-hidden="true"></i>
+                                        </button>
+                                    </span>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 hide">
+                        <div class="form-group form-group-sm">
+                            <label class="control-label font-500 w-100p">Create new columns <span class="pull-right"><a href="javascript:void(0);" >Add-column</a></span></label>
+                            <div id="columnsBox">
+                                <div class="boardIn">
+                                    <input type="text" name="columns[]" class="columns col form-control 1" >
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="col-sm-12">
+                        <div class="form-group mb0">
+                            <button class="btn btn-sm btn-default btn-success" type="submit" id="submit"  name="submit" >Submit</button>
+                        </div>
+                    </div>
+
+
+
+                </form>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Scripts -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/bootstrap-select.min.js"></script>
+<script src="assets/js/vendor/autosize.js"></script>
+<script src="assets/js/vendor/progressbar.js"></script>
+<script src="assets/js/vendor/toast.js"></script>
+<script src="assets/js/main.js"></script>
+
+</body>
+</html>

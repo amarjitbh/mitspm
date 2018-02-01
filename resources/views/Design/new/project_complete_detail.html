@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div class="top-navbar">
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom pt5">
+        <div class="container-fluid plr10">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand hide" href="#">Brand</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">
+                            <i class="fa fa-star"></i>
+                            iojioji
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li>
+                                <a href="board-detail/15">
+                                    project one
+                                </a>
+                            </li>
+                            <li>
+                                <a href="board-detail/17">
+                                    iojioji
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="dashboard">Dashboard</a>
+                    </li>
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href=""><i class="fa fa-bell-o"></i></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Amarjit  <span class="caret"></span></a>
+                        <ul class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li><a href="logout"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                Logout
+                            </a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-right">
+                    <div class="form-group">
+                        <div class="input-group input-group-sm">
+                            <input type="text" class="form-control" placeholder="Search...">
+                            <span class="input-group-btn"><button type="submit" class="btn btn-default"><i
+                                    class="fa fa-search"></i></button></span>
+                        </div>
+
+                    </div>
+
+                </form>
+                <div class="">
+                    <div class="clearfix"></div>
+                    <ul class="nav navbar-nav">
+                        <li class="hidden-xs">
+
+                            <a id="menu-toggle1" href="#" class=" btn-menu toggle">
+                                <i class="fa fa-bars"></i>
+                            </a>
+
+                        </li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                        <li><a href="#">Link 3</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
+                               aria-haspopup="true" aria-expanded="false">
+                                board - one
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                                <li>
+                                    <a href="board-detail/17">
+                                        board - one
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="board-detail/18">
+                                        board-two
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+</div>
+<div id="wrapper" class="h-100p">
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <nav id="spy">
+            <ul class="sidebar-nav nav">
+
+                <li>
+                    <a href="#anch1" data-scroll class="font12">
+                        <span class="fa fa-folder font12"></span> My Work
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"  data-scroll class="font12" data-target="#addTask" data-toggle="modal">
+                        <span class="fa fa-plus font12"></span> Create-Task
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#anch3" data-scroll class="font12">
+                        <span class="fa fa-list font12"></span> Current/backlog
+                    </a>
+                </li>
+                <li>
+                    <a href="#anch3" data-scroll class="font12">
+                        <span class="fa fa-archive font12"></span> Icebox
+                    </a>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li>
+                    <a href="#anch4" data-scroll class="font12">
+                        <span class="fa fa-check font12"></span> Done
+                    </a>
+                </li>
+                <li>
+                    <a href="#anch4" data-scroll class="font12">
+                        <span class="fa fa-tag font12"></span> Label
+                    </a>
+                </li>
+                <li>
+                    <a href="#anch4" data-scroll class="font12">
+                        <span class="fa fa-clock-o font12"></span> Project History
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" onclick="AddNewColumn()" data-scroll class="font12">
+                        <span class="fa fa-clock-o font12"></span> Add Column
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <div id="page-content-wrapper" class="h-100p">
+        <div class="content-header visible-xs">
+            <div id="home">
+                <a id="menu-toggle2" href="#" class=" btn-menu toggle">
+                    <i class="fa fa-bars"></i> MENU
+                </a>
+            </div>
+        </div>
+        <div> <div class="padding0">
+
+        </div></div>
+        <div class="page-content h-100p" data-spy="scroll" data-target="#spy">
+            <div class="h-scrollable container-fluid h-100p">
+                <div class="row h-100p pos-rel" id="boardRowDiv">
+                    <!--Expanded View-->
+                    <div class="expanded-view">
+                        <div class="tile font12">
+                            <span>Expanded View</span>
+                            <span class="action pull-right">
+                                <a href="javascript:void(0);" title="Collapse View" class="action-compress"><i class="fa fa-compress"></i></a>
+                            </span>
+                        </div>
+                        <div class="content-section">
+                            <div class="panel panel-default board-panel-common">
+
+
+
+
+
+                                    <div class="panel-body board-panel-body-common" id="appendDataId12">
+                                        <form class="board-form-common form-editable">
+
+                                            <div class="form-group"><label for="update_sub"
+                                                                           class="font-600">Title</label>
+                                                                <textarea
+                                                                        class="form-control input-sm no-resize autoExpand"
+                                                                        rows="1" id="update_sub_14" value=""
+                                                                        style="overflow-x: hidden; overflow-wrap: break-word; height: 25px;">test timer </textarea>
+                                            </div>
+                                            <div class="form-group"><label for="update_desc"
+                                                                           class="font-600">Description</label>
+                                                                <textarea
+                                                                        class="form-control input-sm no-resize autoExpand"
+                                                                        id="update_desc_14"
+                                                                        style="overflow-x: hidden; overflow-wrap: break-word; height: 41px;">time</textarea>
+                                            </div>
+                                            <div class="form-group"><label for="assgnUser"
+                                                                       class="mb0 font-600">Members</label>
+                                                <div class="clearfix"></div>
+                                                <div class="assignedUserList">
+                                                    <div class="checkbox checkbox-user"><input id="lb_1"
+                                                                                               checked=""
+                                                                                               class="checkbox userDataId_14"
+                                                                                               value="1"
+                                                                                               type="checkbox">
+                                                        <label for="lb_1" class="label">Amarjit</label>
+                                                    </div>
+                                                    <div class="checkbox checkbox-user"><input id="lb_2"
+                                                                                               checked=""
+                                                                                               class="checkbox userDataId_14"
+                                                                                               value="2"
+                                                                                               type="checkbox">
+                                                        <label for="lb_2" class="label">pankhi</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group"><label for="assgnUser"
+                                                                       class="mb0 font-600">Set
+                                                Priority</label>
+                                                <div class="clearfix"></div>
+                                                <div class="col-sm-4 pl0">
+                                                    <div class="radio radio-user"><label
+                                                            for="radio1"><input name="radiopriority"
+                                                                                id="radio1" class="mt0"
+                                                                                checked="" type="radio">
+                                                        Highest</label></div>
+                                                    <div class="radio radio-user"><label
+                                                            for="radio2"><input name="radiopriority"
+                                                                                id="radio2" class="mt0"
+                                                                                type="radio">
+                                                        High</label></div>
+                                                </div>
+                                                <div class="col-sm-4 pl0">
+                                                    <div class="radio radio-user"><label
+                                                            for="radio3"><input name="radiopriority"
+                                                                                id="radio3" class="mt0"
+                                                                                type="radio">
+                                                        Medium</label></div>
+                                                    <div class="radio radio-user"><label
+                                                            for="radio4"><input name="radiopriority"
+                                                                                id="radio4" class="mt0"
+                                                                                type="radio">
+                                                        Low</label></div>
+                                                </div>
+                                                <div class="col-sm-4 pl0">
+                                                    <div class="radio radio-user"><label
+                                                            for="radio5"><input name="radiopriority"
+                                                                                id="radio5" class="mt0"
+                                                                                type="radio">
+                                                        Lowest</label></div>
+                                                </div>
+                                            </div>
+                                            <div class="clearfix"></div>
+                                            <div id="roleErr14" style=""></div>
+                                            <button id="updateBtn14" onclick="updateTask(14)"
+                                                    type="button"
+                                                    class="btn btn-default btn-success btn-xs ml0 mt10 mb5">
+                                                Submit
+                                            </button>
+                                        </form>
+                                        <div>
+                                            <form class="board-form-common">
+                                                <div class="form-group"><label
+                                                        class="font-600">Comments</label>
+                                                    <ul class="list-group comment-section"
+                                                        id="showComments_12">
+                                                        <li class="list-group-item">
+                                                            <div class="heading"><span
+                                                                    class="member-name font-600 text-capitalize">Amarjit</span>
+                                                                <span class="time-stamp pull-right font10">10 min ago</span>
+                                                            </div>
+                                                            <div class="message" id="userComment4">hgk
+                                                            </div>
+                                                                            <span class="hide" id="editCommnt4"
+                                                                                  onclick="updateComment(4,14)"
+                                                                                  style="cursor: pointer;color: red;float: right;">Edit</span>
+                                                        </li>
+                                                    </ul>
+                                                    <textarea required=""
+                                                              class="form-control input-sm no-resize autoExpand"
+                                                              id="add_comment_14"
+                                                              style="overflow-x: hidden; overflow-wrap: break-word; height: 41px;"></textarea>
+                                                    <input id="hidComment14" type="hidden">
+
+                                                    <div class="text-right mt5 mb5"><span class="data-loading mr5"><i
+                                                            class="fa fa-spinner fa-spin font12"></i></span>
+                                                        <button class="btn btn-primary btn-xs comment-btn-submit"
+                                                                type="button" onclick="addComment(14)">Send
+                                                        </button>
+                                                    </div>
+                                                    <span id="commentError14" style="color:red;"></span></div>
+                                            </form>
+                                        </div>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--/Expanded View-->
+                    <div class="col-xs-3 h-100p plr-0 col-min-width boardColumnDivClass"
+                         id="boardColumnBox51">
+                        <div class="panel panel-default panel-main h-100p mb0">
+                            <div id="panel-heading-51" class="panel-heading">
+                                <h3 class="panel-title font13">
+                                        <span id="panel-span-51">
+                                            Future Task
+                                        </span>
+                                        <span id="panel-input-51"
+                                              style="display:none;" class="panel-heading-edit-field form-inline">
+                                            <input class="form-control" type="text" value="Future Task"
+                                                   id="imp-val-51"/>
+                                        </span>
+                                        <span class="panel-action-btn pull-right">
+                                            <div id="panel-setting-51"
+                                                 class="btn-group">
+                                                <a href="javascript:void(0);" class="btn dropdown-toggle"
+                                                   data-toggle="dropdown" style="color:#fff;">
+                                                    <i class="fa fa-cog" aria-hidden="true"></i>
+                                                </a>
+                                                <ul class="dropdown-menu dropdown-menu-rt">
+                                                    <li>
+                                                        <a href="javascript:void(0);"
+                                                           onclick="editBoardColumn('51');">
+                                                            <i class="fa fa-pencil"></i> Edit
+                                                        </a>
+                                                    </li>
+                                                    <li><a href="javascript:void(0);"
+                                                           onclick="removeBoardColumn('51');">
+                                                        <i class="fa fa-remove"></i> Remove
+                                                    </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div id="panel-done-51" class="btn-group panel-heading-edit-field-action-btn"
+                                                 style="display:none;">
+                                                <a class="btn" href="javascript:void(0);"
+                                                   onclick="updateBoardColumns('51')">
+                                                    <i class="fa fa-floppy-o" aria-hidden="true"></i>
+                                                </a>
+                                                <a class="btn" href="javascript:void(0);"
+                                                   onclick="cancleBoardColumns('51')">
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </a>
+                                            </div>
+
+                                        </span>
+                                </h3>
+                            </div>
+
+                            <div class="panel-body mb0 p0">
+
+
+                                <ul  class="list-group droptrue mb0 h-100p myCls51 drop sortable"
+                                     data-board-column-id="51">
+                                    <li class="list-group-item font12 draggable draggable-list-item"
+                                        id="projectTask_12"
+                                        data-order-id="">
+
+
+                                        <div class="panel-group mb0" id="accordion" role="tablist"
+                                             aria-multiselectable="true">
+                                            <div class="panel panel-default board-panel-common">
+
+
+                                                <div class="panel-heading " role="tab"
+                                                     id="headingOne">
+                                                    <div class="panel-title">
+                                                                        <span class="caret-icon">
+                                                                        <a id="sub_12"
+
+                                                                           class="collapsed" role="button"
+                                                                           data-toggle="collapse"
+                                                                           data-parent="#accordion"
+                                                                           href="#collapse12"
+                                                                           aria-expanded="true"
+                                                                           aria-controls="collapse12">
+                                                                        </a>
+                                                                        </span>
+                                                                            <span class="priority-status">
+                                                                                  <span class="status-box bg-highest hide"></span>
+                                                                                <div class="btn-group">
+                                                                                    <div class="dropdown">
+                                                                                        <button data-toggle="dropdown" class="dropdown-toggle p0 btn-no-border"><span class="status-box bg-highest"></span></button>
+                                                                                        <ul class="dropdown-menu">
+                                                                                            <li>
+                                                                                                <a href="javascript:void(0);" class="priority-option">
+                                                                                                    <span class="status-box bg-highest"></span> Highest
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="javascript:void(0);" class="priority-option">
+
+                                                                                                    <span class="status-box bg-high"></span> High
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="javascript:void(0);" class="priority-option">
+
+                                                                                                    <span class="status-box bg-medium"></span> Medium
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="javascript:void(0);" class="priority-option">
+
+                                                                                                    <span class="status-box bg-low"></span> Low
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li>
+                                                                                                <a href="javascript:void(0);" class="priority-option">
+
+                                                                                                    <span class="status-box bg-lowest"></span> Lowest
+                                                                                                </a>
+                                                                                            </li>
+
+
+
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </span>
+                                                                        <span id="title_12">
+                                                                            dfbgvdfxbg
+                                                                        </span>
+
+                                                                                <span class="text-right">
+                                                                            <span class="timer-main">
+                                      <button class="timer timer_button timer_start"
+                                              type="button"
+                                              value=Play data-project-task-id="12"
+                                              onclick=""></button>
+                                                                                                                                                                    <span class="time_duration clockTimer">00:16:57</span>
+                                                                                </span>
+
+
+
+                                                                        </span>
+
+
+                                                    </div>
+                                                </div>
+                                                <div id="collapse12" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading12" style="" aria-expanded="true">
+
+                                                    <div class="panel-body board-panel-body-common" id="appendDataId12">
+                                                        <form class="board-form-common form-editable">
+                                                            <div class="form-group mb5">
+                                                                <div class="board-action-btn text-right">
+                                                                    <div class="btn-group btn-group-xs">
+                                                                        <a href="javascript:void(0);" class="btn btn-default btn-no-radius"
+                                                                                title="Expand View" name="expand-view"
+                                                                                ><i
+                                                                                class="fa fa-expand"
+                                                                                aria-hidden="true"></i></a>
+                                                                        <button class="btn btn-default btn-no-radius"
+                                                                                title="Delete Board"
+                                                                                onclick="removeTask(14)"><i
+                                                                                class="fa fa-trash"
+                                                                                aria-hidden="true"></i></button>
+
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group"><label for="update_sub"
+                                                                                           class="font-600">Title</label>
+                                                                <textarea
+                                                                        class="form-control input-sm no-resize autoExpand"
+                                                                        rows="1" id="update_sub_14" value=""
+                                                                        style="overflow-x: hidden; overflow-wrap: break-word; height: 25px;">test timer </textarea>
+                                                            </div>
+                                                            <div class="form-group"><label for="update_desc"
+                                                                                           class="font-600">Description</label>
+                                                                <textarea
+                                                                        class="form-control input-sm no-resize autoExpand"
+                                                                        id="update_desc_14"
+                                                                        style="overflow-x: hidden; overflow-wrap: break-word; height: 41px;">time</textarea>
+                                                            </div>
+                                                            <div class="form-group"><label for="assgnUser"
+                                                                                       class="mb0 font-600">Members</label>
+                                                                <div class="clearfix"></div>
+                                                                <div class="assignedUserList">
+                                                                    <div class="checkbox checkbox-user"><input id="lb_1"
+                                                                                                               checked=""
+                                                                                                               class="checkbox userDataId_14"
+                                                                                                               value="1"
+                                                                                                               type="checkbox">
+                                                                        <label for="lb_1" class="label">Amarjit</label>
+                                                                    </div>
+                                                                    <div class="checkbox checkbox-user"><input id="lb_2"
+                                                                                                               checked=""
+                                                                                                               class="checkbox userDataId_14"
+                                                                                                               value="2"
+                                                                                                               type="checkbox">
+                                                                        <label for="lb_2" class="label">pankhi</label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group"><label for="assgnUser"
+                                                                                       class="mb0 font-600">Set
+                                                                Priority</label>
+                                                                <div class="clearfix"></div>
+                                                                <div class="col-sm-4 pl0">
+                                                                    <div class="radio radio-user"><label
+                                                                            for="radio1"><input name="radiopriority"
+                                                                                                id="radio1" class="mt0"
+                                                                                                checked="" type="radio">
+                                                                        Highest</label></div>
+                                                                    <div class="radio radio-user"><label
+                                                                            for="radio2"><input name="radiopriority"
+                                                                                                id="radio2" class="mt0"
+                                                                                                type="radio">
+                                                                        High</label></div>
+                                                                </div>
+                                                                <div class="col-sm-4 pl0">
+                                                                    <div class="radio radio-user"><label
+                                                                            for="radio3"><input name="radiopriority"
+                                                                                                id="radio3" class="mt0"
+                                                                                                type="radio">
+                                                                        Medium</label></div>
+                                                                    <div class="radio radio-user"><label
+                                                                            for="radio4"><input name="radiopriority"
+                                                                                                id="radio4" class="mt0"
+                                                                                                type="radio">
+                                                                        Low</label></div>
+                                                                </div>
+                                                                <div class="col-sm-4 pl0">
+                                                                    <div class="radio radio-user"><label
+                                                                            for="radio5"><input name="radiopriority"
+                                                                                                id="radio5" class="mt0"
+                                                                                                type="radio">
+                                                                        Lowest</label></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="clearfix"></div>
+                                                            <div id="roleErr14" style=""></div>
+                                                            <button id="updateBtn14" onclick="updateTask(14)"
+                                                                    type="button"
+                                                                    class="btn btn-default btn-success btn-xs ml0 mt10 mb5">
+                                                                Submit
+                                                            </button>
+                                                        </form>
+                                                        <div>
+                                                            <form class="board-form-common">
+                                                                <div class="form-group"><label
+                                                                        class="font-600">Comments</label>
+                                                                    <ul class="list-group comment-section"
+                                                                        id="showComments_12">
+                                                                        <li class="list-group-item">
+                                                                            <div class="heading"><span
+                                                                                    class="member-name font-600 text-capitalize">Amarjit</span>
+                                                                                <span class="time-stamp pull-right font10">10 min ago</span>
+                                                                            </div>
+                                                                            <div class="message" id="userComment4">hgk
+                                                                            </div>
+                                                                            <span class="hide" id="editCommnt4"
+                                                                                  onclick="updateComment(4,14)"
+                                                                                  style="cursor: pointer;color: red;float: right;">Edit</span>
+                                                                        </li>
+                                                                    </ul>
+                                                                    <textarea required="" class="form-control input-sm no-resize autoExpand" id="add_comment_14" style="overflow-x: hidden; overflow-wrap: break-word; height: 41px;"></textarea>                                        <input id="hidComment14" type="hidden">                                        <div class="text-right mt5 mb5"><span class="data-loading mr5"><i class="fa fa-spinner fa-spin font12"></i></span><button class="btn btn-primary btn-xs comment-btn-submit" type="button" onclick="addComment(14)">Send</button></div>                                        <span id="commentError14" style="color:red;"></span>                                    </div>                                </form>                            </div></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!-- Modal for addTask -->
+        <div id="addTask" class="modal fade modal-common-style" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">ADD-Task</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div id="alert_fail" class="alert alert-danger" style="display:none;">
+                        </div>
+                        <form id="taskForm" class="form-common">
+                            <div class="form-group form-group-sm">
+                                <label for="columns" class="control-label font-500">Board-Column</label>
+                                <select id="columns" class="form-control selectpicker">
+                                    <option value="51">
+                                        Future Task
+                                    </option>
+                                    <option value="52">
+                                        Urgent Task
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label for="subject" class="control-label font-500">Subject</label>
+                                <input type="text" name="subject" id="subject" class="form-control">
+                                <input type="hidden" name="submitType" id="submitType">
+                                <input type="hidden" name="subject" id="project_id" value="4">
+                                <input type="hidden" name="subject" id="project_board_id"
+                                       value="17">
+                            </div>
+                            <div class="form-group form-group-sm">
+                                <label for="description" class="control-label font-500">Description</label>
+                                <textarea name="description" id="description" class="form-control no-resize"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="users" class="control-label font-500">Select Users</label>
+                                <div class="checkbox mt0 mb5">
+                                    <input type="checkbox" class="checkbox ml0 users" name="user1"
+                                           class="users"
+                                           id="1"
+                                           value="1"> <label class="font14"
+                                                             for="1">Amarjit</label>
+                                </div>
+                                <div class="checkbox mt0 mb5">
+                                    <input type="checkbox" class="checkbox ml0 users" name="users1"
+                                           class="users"
+                                           id="2"
+                                           value="2"> <label class="font14"
+                                                             for="2">pankhi</label>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default btn-sm btn-no-radius" data-dismiss="modal">Close</button>
+                        <button type="button" id="submit"  class="btn btn-sm btn-success btn-no-radius">Submit
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div id="removeColumns" class="modal modal-common-style fade" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <form action="moveColumnsTask" method="POST">
+                        <input type="hidden" name="_token" value="f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Move Tasks</h4>
+                        </div>
+                        <div class="modal-body" id="columnNames">
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-sm btn-no-radius" data-dismiss="modal">Close</button>
+                            <button type="submit" id="submit" class="btn btn-sm btn-success btn-no-radius">Move</button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/bootstrap-select.min.js"></script>
+<script src="assets/js/vendor/autosize.js"></script>
+<script src="assets/js/vendor/progressbar.js"></script>
+<script src="assets/js/vendor/toast.js"></script>
+<script src="assets/js/main.js"></script>
+
+<script src="assets/js/timer/jquery.timer.js"></script>
+
+<script>
+    $('.expanded-view').hide();
+    $('a[name="expand-view"]').on('click',function(){
+        $('.expanded-view').fadeIn('slow');
+    });
+
+    $('.action-compress').on('click',function(e){
+        e.preventDefault();
+        $('.expanded-view').fadeOut('medium');
+    });
+
+    function addComment(tid){
+        /* tid as task Id */
+        /***  UserId => session user id ***/
+        var userId      = '1';
+        var comments    = $('#add_comment_'+tid).val();
+        var hidcomment_id  = $('#hidComment'+tid).val();
+        //console.log(comment_id);return false;
+        //alert(tid+'=='+hidcomment_id);
+        $.ajax({
+
+            url      : 'taskComments',
+            type     : 'POST',
+            data     : {_token: 'f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC','userId':userId,'comment':comments,'taskId':tid,'comment_id':hidcomment_id},
+            dataType : 'JSON',
+            beforeSend: function(){
+                if (comments != '') {
+                    $('.data-loading').addClass('active');
+                    $('.comment-btn-submit').attr('disabled','disabled');
+                }
+                else {
+                    return false;
+                }
+
+            },
+            success  : function (responce) {
+                $('.data-loading').removeClass('active');
+                $('.comment-btn-submit').removeAttr('disabled','disabled');
+                if(responce.success == 100) {
+                    $('#add_comment_'+tid).val('');
+                    $('#hidComment'+tid).val('');
+
+                    $('#editCommnt'+responce.commentId).attr('onclick','');
+                    $('#editCommnt'+responce.commentId).attr('onclick','updateComment('+responce.commentId+','+tid+')');
+                    $('#editCommnt'+responce.commentId).text('Edit');
+                    $('#hidComment'+tid).val('');
+
+                    //console.log(responce);
+                    if(hidcomment_id ==''){
+
+                        var cmtDt = '<li class="list-group-item">\
+                                    <div class="heading"><span class="member-name font-600 text-capitalize">'  + responce.user.name + '</span> <span class="time-stamp pull-right font10">10 min ago</span></div>\
+                                    <div class="message" id="userComment' + responce.commentId + '">' + responce.comment + '</div>\
+                                    \
+                                    <span class="hide" id="editCommnt' + responce.commentId + '" onclick="updateComment(' + responce.commentId + ',' + tid + ')" style="cursor: pointer;color: red;float: right;">Edit</span>\
+                            </li>';
+                        $('#showComments_' + tid).append(cmtDt);
+                    }else{
+
+                        $('#userComment'+responce.commentId).text(responce.comment);
+                    }
+
+                }else{
+
+                    $('#commentError'+tid).text('Please try again');
+                    setTimeout(function(){
+                        $('#commentError'+tid).text('');
+                    },800);
+                }
+            },
+            error : function (responce){
+                $.each(responce,function(ind,val){
+
+                    if(!$.isEmptyObject(val.comment)){
+                        $('#commentError'+tid).text(val.comment);
+                        return false;
+                    }else{
+                        $('#commentError'+tid).text('Please try again');
+                    }
+
+                });
+                setTimeout(function(){
+                    $('#commentError'+tid).text('');
+                },800);
+            },
+        });
+    }
+
+    function updateComment(cid,tid){
+        /*** cid as comment id and tid as task id ***/
+        //alert(cid+'=='+tid);
+        //cancleCls
+
+        //$('.cancleCls').attr('onclick', 'updateComment(' + cid + ',' + tid + ')');
+
+        var txt = $('.cancleCls').text();
+
+        if(txt == '') {
+            var comment = $('#userComment' + cid).text();
+            $('#add_comment_' + tid).val(comment);
+            $('#editCommnt' + cid).attr('onclick', '');
+            $('#editCommnt' + cid).addClass(' '+cid);
+            $('#editCommnt' + cid).addClass('cancleCls');
+            $('#editCommnt' + cid).attr('onclick', 'cancelComment(' + cid + ',' + tid + ')');
+            $('#editCommnt' + cid).text('cancel');
+            $('#hidComment' + tid).val(cid);
+        }else{
+
+
+            var onc = $('.cancleCls').attr('class');
+
+            var success = onc.replace('ecomment', '');
+            var successOne = success.replace('cancleCls', '');
+            var trm  = successOne.replace(/ /g,'');
+            cancelComment(trm,tid);
+
+            updateComment(cid,tid);
+        }
+    }
+
+    function cancelComment(cid,tid){
+        //alert(cid+'=='+tid);
+        $('#add_comment_'+tid).val('');
+        $('#editCommnt' + cid).removeClass('cancleCls');
+        $('#editCommnt'+cid).attr('onclick','');
+        $('#editCommnt'+cid).attr('onclick','updateComment('+cid+','+tid+')');
+        $('#editCommnt'+cid).text('Edit');
+        $('#hidComment'+tid).val('');
+    }
+
+    /* function loadTooltip() {
+
+     $('[data-tooltip="true"]').tooltip({
+     trigger: 'hover'
+     });
+     }*/
+</script>
+<script>
+    function editBoardColumn(columnId){
+        //alert(columnId);
+        $('#panel-setting-'+columnId).hide();
+        $('#panel-span-'+columnId).hide();
+        $('#panel-done-'+columnId).show();
+        $('#panel-input-'+columnId).show();
+    }
+
+    function updateBoardColumns(columnId){
+
+        var inputVal = $('#imp-val-'+columnId).val();
+        if(inputVal == ''){
+            $('#imp-val-'+columnId).css('border','1px solid red');
+            $('#imp-val-'+columnId).focus(function (){
+                $('#imp-val-'+columnId).css('border','');
+            });
+            return false;
+        }
+        var valId = columnId;
+        //alert(inputVal);return false;
+        $.ajax({
+
+            url : 'updateBoardColumn',
+            type : 'POST',
+            data : {_token: 'f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC','columnName' : inputVal,'columnId' : valId},
+            success : function(response) {
+                console.log(response);
+                if(response == 100){
+                    $('#imp-val-'+columnId).val(inputVal);
+                    $('#panel-span-'+columnId).text(inputVal);
+                    $('#panel-setting-'+columnId).show();
+                    $('#panel-span-'+columnId).show();
+                    $('#panel-done-'+columnId).hide();
+                    $('#panel-input-'+columnId).hide();
+                }
+            },
+            error : function(fail){
+                $.each(fail,function(ind,val){
+
+                    if(val.project_board_name){
+                        alert(val.project_board_name);
+                    }
+                });
+            },
+        });
+    }
+
+    function cancleBoardColumns(columnId){
+
+        $('#panel-setting-'+columnId).show();
+        $('#panel-span-'+columnId).show();
+        $('#panel-done-'+columnId).hide();
+        $('#panel-input-'+columnId).hide();
+    }
+
+    function removeBoardColumn(columnId){
+        if(confirm('are you sure')){
+
+            $.ajax({
+
+                url : 'checkColumnData',
+                type : 'POST',
+                data : {_token: 'f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC','columnId' : columnId},
+                success : function(responce){
+                    if(responce != 0) {
+                        $('#columnNames').html(responce);
+                        $('#removeColumns').modal();
+                        console.log(responce);
+                    }else{
+
+                        $('#boardColumnBox'+columnId).hide();
+                    }
+                },
+            })
+        }
+    }
+    /*** addVariable is a global variable  Please don't remove it ***/
+    var addVariable = 0;
+    function AddNewColumn(){
+        addVariable++;
+        //alert(addVariable);
+        /*//var columnHtml =  $('.col-min-width').html();
+         var columnHtml =  $("<div />").append($('.col-min-width').clone().last()).html();
+         $('#boardRowDiv').append(columnHtml);
+         var cls = $('.boardColumnDivClass').last().attr('class');
+         output = cls.split(/[, ]+/).pop();
+         //alert(output);
+         $('.'+output).last().html('');*/
+        if(addVariable == 1) {
+            var newHtml = '<div class="col-xs-3 h-100p plr-0 col-min-width boardColumnDivClass" id="newColumnId'+addVariable + '">\
+                            <div class="panel panel-default panel-main h-100p mb0">\
+                                <div id="panel-heading-30" class="panel-heading">\
+                                    <h3 class="panel-title font13" >\
+                                    <span id="panel-input-51" style="" class="panel-heading-edit-field form-inline">\
+                                    <input class="form-control"  id="newColumnName'+addVariable + '" type="text">\
+                                     </span>\
+                                     <span class="panel-action-btn pull-right">\
+                                     <div id="panel-done-51" class="btn-group panel-heading-edit-field-action-btn" style="">\
+                                        <a class="btn" href="javascript:void(0);" onclick="newColumnAdd(' + addVariable + ')">\
+                                        <i class="fa fa-floppy-o" aria-hidden="true"></i>\
+                                        </a>\
+                                        <a class="btn" href="javascript:void(0);" onclick="newColumnRemove(' + addVariable + ')">\
+                                        <i class="fa fa-times" aria-hidden="true"></i>\
+                                        </a>\
+                                        </div>\
+                                    </span>\
+                                    </h3>\
+                                </div>\
+                                <div class="panel-body mb0 p0">\
+                                </div>\
+                            </div>\
+                        </div>';
+            scrollWin();
+            $('#boardRowDiv').append(newHtml);
+        }
+    }
+
+    function scrollWin() {
+
+        var width = $( window ).width();
+        //alert(width);
+        //window.scrollTo(width, 0);
+        //window.scrollTo( 800 );
+        //$("body").animate({scrollLeft: leftPos + 200}, 800);
+        $(".h-scrollable").animate({scrollLeft :'+='+width}, 'slow','linear');
+    }
+    function newColumnAdd(value){
+
+        var addColumnName = $('#newColumnName'+value).val();
+        var boardID = $('#project_board_id').val();
+
+        if(addColumnName != ''){
+            //alert(addColumnName);return false;
+            $.ajax({
+
+                url : 'addNewColumn',
+                type : 'POST',
+                data : {_token: 'f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC','boardId' : boardID,'columnName' : addColumnName},
+                success : function(responce){
+                    console.log(responce);
+                    $('#newColumnId'+value).html('');
+                    $('#newColumnId'+value).after(responce);
+
+                    $('#newColumnId'+value).remove();
+                    setTimeout(function() {
+                        var newColumnAttrClasId = $('.newColumnAttrClasId').val();
+                        var newColumnAttrClasName = $('.newColumnAttrClasName').val();
+
+                        var newOpetions = '<option value="'+newColumnAttrClasId+'">'+newColumnAttrClasName+'</option>';
+                        addVariable = 0;
+                        $('#columns').append(newOpetions);
+                    },100);
+                },
+                error : function(error){
+                    console.log(error);
+                },
+            });
+        }
+    }
+
+    function newColumnRemove(id){
+        $('#newColumnId'+id).remove();
+        addVariable = 0;
+    }
+
+</script>
+<script>
+    /*Function to extract class name string*/
+    function getClassStartsWith(t,n){var r=$.grep(t.split(" "),function(t,r){return 0===t.indexOf(n);}).join();return r||!1;}
+    /* /Function to extract class name string*/
+
+    $('.priority-status .btn-group .dropdown .dropdown-menu a').click(function(e) {
+        e.stopPropagation();
+        $(this).parent('li').siblings().find('a.active').removeClass('active');
+        $(e.target).addClass('active');
+
+        var $element = $(e.target).find('.status-box');
+        var classes = $element[0].className;
+
+        var $bgValue = getClassStartsWith(classes,'bg-');
+
+        var panelStatusIcon = $(e.target).parents('.btn-group').eq(0).find('.dropdown-toggle .status-box');
+
+        var $parElement = panelStatusIcon;
+        var classes = $parElement[0].className;
+        var $parBgValue = getClassStartsWith(classes,'bg-');
+
+        panelStatusIcon.removeClass($parBgValue ).addClass($bgValue );
+
+    });
+    $('.priority-status .btn-group .dropdown').on('hide.bs.dropdown', function () {
+        alert('dropmenu about to hidden');
+    })
+</script>

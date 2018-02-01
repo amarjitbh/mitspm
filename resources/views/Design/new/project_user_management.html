@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Project Management</title>
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+
+</head>
+<body>
+<div id="app" class="top-navbar layout-login-dashboard">
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand visible-xs" href="http://localhost/project_management/public">
+                    Project Management                    </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav hidden-xs">
+                    <li>
+                        <a  href="dashboard">
+                            Project Management                            </a>
+                    </li>
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Amarjit <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li>
+                                <a href="logout"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="logout" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC">
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="dashboard-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="dashboard-main">
+                        <span class="title font16">
+                            DASHBOARD - Admin
+                        </span>
+                        <span class="pull-right">
+                            <a href="projects/create"  class="btn btn-success btn-create-project btn-xs">Create New Project</a>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container alert-container">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="padding0">
+                @include('flash_message')
+            </div>            </div>
+    </div>
+</div>
+<div class="container">
+    <div class="panel panel-default dashboard-panel-filter manage-project-add-people">
+
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="input-group input-group-sm">
+
+                        <input type="text" class="form-control" name="x" placeholder="Add email address">
+                        <select id="lunch" class="selectpicker" title="Select user role">
+                            <option>Owner</option>
+                            <option>Member</option>
+                            <option>Viewer</option>
+                        </select>
+                <span class="input-group-btn">
+                    <button class="btn btn-default btn-success" type="button">ADD</button>
+                </span>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="text-right">
+                        <a href="projects" class="btn btn-sm btn-default">Project Invites</a>&nbsp;<a
+                            href="project/assigned-user" class="btn btn-sm btn-default">Project User
+                        Assigned</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="clearfix"></div>
+        </div>
+        <div class="panel-body">
+
+            <div class="row mb25">
+
+                <div class="clearfix"></div>
+                <div class="table-responsive table-common-style">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th width="120">Role</th>
+                            <th width="185">Invitation</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+
+                            <td class="font-600">Mark Otto</td>
+                            <td>Otto@gmail.com</td>
+                            <td><select id="lunch" class="selectpicker">
+                                <option>Owner</option>
+                                <option>Member</option>
+                                <option>Viewer</option>
+                            </select>
+                            </td>
+                            <td>No pending invitation</td>
+                            <td><a href="">Remove</a></td>
+                        </tr>
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <div class="padding0">
+    </div></div>
+<table>
+
+    <thead>
+    <tr>
+        <th>Project Name</th>
+        <th>Assigned User</th>
+        <th>Status</th>
+        <th>Started On</th>
+        <th>Update</th>
+        <th>Invite Users</th>
+
+    </tr>
+    </thead>
+    <tr>
+        <td></td>
+        <td>Amarjit</td>
+        <td>Pending</td>
+        <td>Jan-01-1970</td>
+        <td><a href="./projects/35/edit">Edit </a></td>
+        <td> <a href="#inviteUser" id="inviteUser_35" data-project-name=""
+                onclick="popupOpen(35)"
+                data-project-id=35 class="inviteUser">
+            Invite User</a></td>
+    </tr>
+</table>
+
+<div class="modal fade" id="inviteUser" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content width450">
+            <div class="bgorange">
+
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span></button>
+                    <div class="form-group">
+
+                        <div class="alert-warning"></div>
+
+                    </div>
+                    <h4 class="modal-title textwhite" id="exampleModalLabel">Invite User</h4>
+                    <form method="POST" action="project/inviteduser" accept-charset="UTF-8"><input name="_token" type="hidden" value="f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC">
+                        <input id="projectId" name="projectId" type="hidden" value=""> <br/><br/>
+                        Send Invite as Admin* <input class="form-control" placeholder="Invite user" name="adminEmail" type="text" value=""> <br/><br/>
+                        Send Invite as Users* <input class="form-control" placeholder="Invite user" name="UserEmail" type="text" value=""> <br/><br/>
+                        <button class="inviteMoreUsers" type="button">Submit</button> <br/>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-body viewDetailBody">
+                <div class="viewDetailContent" id="interesteddetail">
+
+
+                </div>
+            </div>
+            <div class="clearfix">&nbsp;</div>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<!-- Scripts -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/bootstrap-select.min.js"></script>
+<script src="assets/js/vendor/autosize.js"></script>
+<script src="assets/js/vendor/progressbar.js"></script>
+<script src="assets/js/vendor/toast.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>

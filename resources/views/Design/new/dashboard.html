@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Project Management</title>
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="assets/css/style.css"/>
+
+
+</head>
+<body>
+<div id="app" class="top-navbar layout-login-dashboard">
+
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <!-- Branding Image -->
+                <a class="navbar-brand visible-xs" href="http://localhost/project_management/public">
+                    Project Management                    </a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="app-navbar-collapse">
+                <!-- Left Side Of Navbar -->
+                <ul class="nav navbar-nav hidden-xs">
+                    <li>
+                        <a  href="dashboard">
+                            Project Management                            </a>
+                    </li>
+                </ul>
+
+                <!-- Right Side Of Navbar -->
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                            Amarjit <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu" role="menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                            <li>
+                                <a href="logout"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="logout" method="POST" style="display: none;">
+                                    <input type="hidden" name="_token" value="f71eMpSm6WLY2TdnvVABBCbywPDesGEBeEyttzcC">
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="dashboard-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="dashboard-main">
+                        <span class="title font16">
+                            DASHBOARD - Admin
+                        </span>
+                        <span class="pull-right">
+                            <a href="projects/create"  class="btn btn-success btn-create-project btn-xs">Create New Project</a>
+                        </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="panel panel-default dashboard-panel-filter">
+        <div class="panel-heading">
+            <div class="row">
+
+                <div class="col-sm-4">
+                    <div class="input-group input-group-sm hide">
+                        <select id="lunch" class="selectpicker" title="Search by...">
+                            <option>Archive</option>
+                            <option>Favourite</option>
+                        </select>
+
+                        <input type="text" class="form-control" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="fa fa-search"></span></button>
+                </span>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <div class="text-right">
+                        <a href="projects" class="btn btn-sm btn-default">Project Invites</a>&nbsp;<a
+                            href="project/assigned-user" class="btn btn-sm btn-default">Project User
+                        Assigned</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="panel-body">
+
+            <div class="row mb25">
+                <div class="col-sm-12">
+                    <h4 class="font16"><i class="fa fa-star"></i> Starred Board</h4>
+                </div>
+                <div class="clearfix"></div>
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">project one</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards1"  data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/1" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/1/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards1" aria-expanded="false" style="height: 0px;">
+                            <div class="sub-board-list">
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/15" class="font12">board - one</a>
+                                </div>
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/16" class="font12">board -Two</a>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">project Three</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards3"  data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/3" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/3/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards3">
+                            <div class="sub-board-list">
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/15" class="font12">board - one</a>
+                                </div>
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/16" class="font12">board -Two</a>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">iojioji</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards4"  data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/4" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/4/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards4">
+                            <div class="sub-board-list">
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/15" class="font12">board - one</a>
+                                </div>
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/16" class="font12">board -Two</a>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">Mits Project one</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards5"  data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/5" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/5/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards5">
+                            <div class="sub-board-list">
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/15" class="font12">board - one</a>
+                                </div>
+                                <div class="sub-board-list-items">
+                                    <a href="board-detail/16" class="font12">board -Two</a>
+                                </div>
+                            </div></div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">Dummy Project- 1</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards6"  data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/6" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/6/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards6">
+                            <div class="sub-board-list">
+                                <div class="sub-board-list-items no-record-found text-center">
+                                    <span class="font12">Sorry, no board found.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">Dummy Project- 1</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards7" onclick="getAllBoards(7)" data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/7" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/7/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards7">
+                            <div class="sub-board-list">
+                                <div class="sub-board-list-items no-record-found text-center">
+                                    <span class="font12">Sorry, no board found.</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12">
+                    <div class="project-card">
+
+                        <div class="project-heading">
+                            <span class="font14 title">project management</span>
+
+                            <div class="pull-right" role="toolbar">
+
+                                <div class="" role="group" >
+                                    <a  data-toggle="collapse" data-target="#projectBoards10" onclick="getAllBoards(10)" data-tooltip="true" data-placement="bottom" title="View Boards" class="btn btn-default btn-no-border">
+                                        <i class="fa fa-list-ul"></i>
+                                    </a>
+
+                                    <a href="create-board/10" data-tooltip="true" data-placement="bottom" title="Create board" class="btn btn-default btn-xs  btn-no-border">
+                                        <i class="fa fa-pencil"></i>
+                                    </a>
+                                    <a href="#" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Add to favourite">
+                                        <i class="fa fa-heart-o"></i>
+                                    </a>
+                                    <a href="projects" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Manage project members">
+                                        <i class="fa fa-users"></i>
+                                    </a>
+                                    <a href="projects/10/edit" class="btn btn-default btn-no-border" data-tooltip="true" data-placement="bottom" title="Project setting">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="project-sub-board dataIn collapse" id="projectBoards10" aria-expanded="false" style="height: 0px;">
+                            <div class="sub-board-list">
+                            <div class="sub-board-list-items">
+                                <a href="board-detail/15" class="font12">board - one</a>
+                            </div>
+                            <div class="sub-board-list-items">
+                                <a href="board-detail/16" class="font12">board -Two</a>
+                            </div>
+                        </div></div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade modal-common-style" id="newBoard" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Create New Board</h4>
+            </div>
+            <div class="modal-body">
+                <form role="form form-common">
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Project Name</label>
+                        <input class="form-control" placeholder="Project name" type="text">
+                    </div>
+                    <div class="form-group form-group-sm">
+                        <label class="control-label">Description</label>
+                        <textarea class="form-control no-resize" placeholder="Project Description" type="text" rows="3"></textarea>
+                    </div>
+
+                    <button type="submit" class="btn btn-sm btn-default btn-success">Submit</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- Scripts -->
+<script src="assets/js/vendor/jquery.min.js"></script>
+<script src="assets/js/vendor/jquery-ui.min.js"></script>
+<script src="assets/js/vendor/bootstrap.min.js"></script>
+<script src="assets/js/vendor/bootstrap-select.min.js"></script>
+<script src="assets/js/vendor/autosize.js"></script>
+<script src="assets/js/vendor/progressbar.js"></script>
+<script src="assets/js/vendor/toast.js"></script>
+<script src="assets/js/main.js"></script>
+
+
+</body>
+</html>
